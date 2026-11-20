@@ -82,13 +82,13 @@ gaet/
 ├── sdk/                         # TypeScript/JavaScript SDK (@ghanirahmans/gaet)
 ├── docs/                        # Project documentation, architecture ADRs & guides
 ├── install.sh / install.ps1     # One-liner binary installers
-├── go.mod                       # Go module definition (module: github.com/ghanirahmans/gaet, go 1.21)
+├── go.mod                       # Go module definition (module: github.com/ghaniyyrahmans/gaet, go 1.21)
 └── gaet.1                       # Linux manpage
 ```
 
 ### Module & Dependency Footprint
 
-`go.mod` declares `module github.com/ghanirahmans/gaet` with `go 1.21` and **zero require directives** — the entire production binary depends only on the Go standard library.
+`go.mod` declares `module github.com/ghaniyyrahmans/gaet` with `go 1.21` and **zero require directives** — the entire production binary depends only on the Go standard library.
 
 ### Layering & Dependency Direction
 

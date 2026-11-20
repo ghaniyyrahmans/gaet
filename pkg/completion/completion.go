@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/ghanirahmans/gaet/pkg/core"
+	"github.com/ghaniyyrahmans/gaet/pkg/core"
 )
 
 // RunCompletion generates shell autocompletion scripts.

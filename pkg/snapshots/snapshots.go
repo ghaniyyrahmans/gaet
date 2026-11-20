@@ -9,7 +9,7 @@ import (
 	"sort"
 	"time"
 
-	"github.com/ghanirahmans/gaet/pkg/core"
+	"github.com/ghaniyyrahmans/gaet/pkg/core"
 )
 
 // SnapshotInfo holds metadata about a single dump file.

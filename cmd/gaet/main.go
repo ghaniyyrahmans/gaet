@@ -15,17 +15,17 @@ import (
 	"syscall"
 	"time"
 
-	"github.com/ghanirahmans/gaet/pkg/backup"
-	"github.com/ghanirahmans/gaet/pkg/completion"
-	"github.com/ghanirahmans/gaet/pkg/config"
-	"github.com/ghanirahmans/gaet/pkg/core"
-	gaetinit "github.com/ghanirahmans/gaet/pkg/init"
-	gaetlog "github.com/ghanirahmans/gaet/pkg/log"
-	"github.com/ghanirahmans/gaet/pkg/remote"
-	"github.com/ghanirahmans/gaet/pkg/scheduler"
-	"github.com/ghanirahmans/gaet/pkg/serve"
-	"github.com/ghanirahmans/gaet/pkg/snapshots"
-	"github.com/ghanirahmans/gaet/pkg/status"
+	"github.com/ghaniyyrahmans/gaet/pkg/backup"
+	"github.com/ghaniyyrahmans/gaet/pkg/completion"
+	"github.com/ghaniyyrahmans/gaet/pkg/config"
+	"github.com/ghaniyyrahmans/gaet/pkg/core"
+	gaetinit "github.com/ghaniyyrahmans/gaet/pkg/init"
+	gaetlog "github.com/ghaniyyrahmans/gaet/pkg/log"
+	"github.com/ghaniyyrahmans/gaet/pkg/remote"
+	"github.com/ghaniyyrahmans/gaet/pkg/scheduler"
+	"github.com/ghaniyyrahmans/gaet/pkg/serve"
+	"github.com/ghaniyyrahmans/gaet/pkg/snapshots"
+	"github.com/ghaniyyrahmans/gaet/pkg/status"
 )
 
 func main() {
@@ -394,9 +394,9 @@ func runUpdate(args []string) error {
 		if runtime.GOOS == "windows" {
 			// Windows has no bash; use the PowerShell installer.
 			cmd = exec.Command("powershell", "-NoProfile", "-ExecutionPolicy", "Bypass", "-Command",
-				"irm https://raw.githubusercontent.com/ghanirahmans/gaet/lts/v1.1/install.ps1 | iex")
+				"irm https://raw.githubusercontent.com/ghaniyyrahmans/gaet/lts/v1.1/install.ps1 | iex")
 		} else {
-			cmd = exec.Command("bash", "-c", "curl -sSL https://raw.githubusercontent.com/ghanirahmans/gaet/lts/v1.1/install.sh | bash")
+			cmd = exec.Command("bash", "-c", "curl -sSL https://raw.githubusercontent.com/ghaniyyrahmans/gaet/lts/v1.1/install.sh | bash")
 		}
 		cmd.Stdout = os.Stdout
 		cmd.Stderr = os.Stderr

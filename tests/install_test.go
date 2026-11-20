@@ -5,7 +5,7 @@ import (
 	"runtime"
 	"testing"
 
-	"github.com/ghanirahmans/gaet/pkg/core"
+	"github.com/ghaniyyrahmans/gaet/pkg/core"
 )
 
 func TestIsManagedInstall_SystemPaths(t *testing.T) {

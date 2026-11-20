@@ -16,10 +16,10 @@ import (
 	"strings"
 	"time"
 
-	"github.com/ghanirahmans/gaet/pkg/backup"
-	"github.com/ghanirahmans/gaet/pkg/core"
-	"github.com/ghanirahmans/gaet/pkg/detect"
-	"github.com/ghanirahmans/gaet/pkg/scheduler"
+	"github.com/ghaniyyrahmans/gaet/pkg/backup"
+	"github.com/ghaniyyrahmans/gaet/pkg/core"
+	"github.com/ghaniyyrahmans/gaet/pkg/detect"
+	"github.com/ghaniyyrahmans/gaet/pkg/scheduler"
 )
 
 //go:embed static/*

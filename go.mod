@@ -1,3 +1,3 @@
-module github.com/ghanirahmans/gaet
+module github.com/ghaniyyrahmans/gaet
 
 go 1.21

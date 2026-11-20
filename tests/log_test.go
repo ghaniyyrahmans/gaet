@@ -8,8 +8,8 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/ghanirahmans/gaet/pkg/core"
-	gaetlog "github.com/ghanirahmans/gaet/pkg/log"
+	"github.com/ghaniyyrahmans/gaet/pkg/core"
+	gaetlog "github.com/ghaniyyrahmans/gaet/pkg/log"
 )
 
 func TestRunLog_NoLogFile(t *testing.T) {

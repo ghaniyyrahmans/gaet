@@ -48,7 +48,7 @@ Migrasi ini bertujuan untuk mentransformasi Gaet dari skrip Python yang bergantu
      - `  [NOTE]  <Pesan Catatan Parameter>`
 4. **Dual-Personality API Architecture**:
    - Fungsi bisnis melempar tipe error terstruktur (`GaetError`), bukan langsung memanggil `os.Exit()`.
-   - Memungkinkan Gaet di-import sebagai modul Go library (`import "github.com/ghanirahmans/gaet/pkg/client"`).
+   - Memungkinkan Gaet di-import sebagai modul Go library (`import "github.com/ghaniyyrahmans/gaet/pkg/client"`).
 5. **Cross-Platform Path & Process Invariance**:
    - Mematuhi standar **XDG Base Directory** di Linux/macOS dan **AppData** di Windows menggunakan `path/filepath`.
 
@@ -58,7 +58,7 @@ Migrasi ini bertujuan untuk mentransformasi Gaet dari skrip Python yang bergantu
 
 ```text
 gaet/ (Branch: feat/golang-migration)
-├── go.mod                       # Modul Go (module github.com/ghanirahmans/gaet)
+├── go.mod                       # Modul Go (module github.com/ghaniyyrahmans/gaet)
 ├── main.go                      # Shim Entry Point (mengarahkan eksekusi ke cmd/gaet)
 ├── cmd/
 │   └── gaet/
@@ -519,7 +519,7 @@ jobs:
 Berikut adalah panduan bertahap (task-by-task checklist) yang akan dicentang oleh pengembang selama proses penulisan kode Go:
 
 ### 🟩 Phase 1: Core Engine & Modul Inisialisasi (`pkg/core`)
-- [ ] Inisialisasi `go.mod` (module `github.com/ghanirahmans/gaet`, Go 1.21+).
+- [ ] Inisialisasi `go.mod` (module `github.com/ghaniyyrahmans/gaet`, Go 1.21+).
 - [ ] Implementasi `pkg/core/paths.go` (XDG Base Dir & AppData Windows).
 - [ ] Implementasi `pkg/core/output.go` (Status tags ASCII `[ OK ]`, `[FAIL]`, ANSI colors, Box printers).
 - [ ] Implementasi `pkg/core/env.go` (Parser file `.env` zero-dependency).

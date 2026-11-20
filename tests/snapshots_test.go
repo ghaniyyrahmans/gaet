@@ -6,8 +6,8 @@ import (
 	"path/filepath"
 	"testing"
 
-	"github.com/ghanirahmans/gaet/pkg/core"
-	"github.com/ghanirahmans/gaet/pkg/snapshots"
+	"github.com/ghaniyyrahmans/gaet/pkg/core"
+	"github.com/ghaniyyrahmans/gaet/pkg/snapshots"
 )
 
 func TestRunSnapshots_EmptyDir(t *testing.T) {

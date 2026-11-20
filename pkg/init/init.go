@@ -7,8 +7,8 @@ import (
 	"strings"
 	"time"
 
-	"github.com/ghanirahmans/gaet/pkg/core"
-	"github.com/ghanirahmans/gaet/pkg/detect"
+	"github.com/ghaniyyrahmans/gaet/pkg/core"
+	"github.com/ghaniyyrahmans/gaet/pkg/detect"
 )
 
 // Preset is a pre-configured database profile.

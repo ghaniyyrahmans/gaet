@@ -23,17 +23,17 @@ If you require the legacy Python implementation for backward compatibility or ex
 
 ### Method 1: Automated 1-Liner Script (Legacy Python Branch)
 ```bash
-curl -sSL https://raw.githubusercontent.com/ghanirahmans/gaet/lts/v1.0/install.sh | bash
+curl -sSL https://raw.githubusercontent.com/ghaniyyrahmans/gaet/lts/v1.0/install.sh | bash
 ```
 
 ### Method 2: Install via Pip (`lts/v1.0` Branch)
 ```bash
-pip install git+https://github.com/ghanirahmans/gaet.git@lts/v1.0
+pip install git+https://github.com/ghaniyyrahmans/gaet.git@lts/v1.0
 ```
 
 ### Method 3: Install from Source (Python)
 ```bash
-git clone https://github.com/ghanirahmans/gaet.git
+git clone https://github.com/ghaniyyrahmans/gaet.git
 cd gaet
 git checkout lts/v1.0
 pip install -e .
@@ -49,12 +49,12 @@ Run the automated one-liner installer to replace the legacy Python executable:
 
 **Linux / macOS:**
 ```bash
-curl -sSL https://raw.githubusercontent.com/ghanirahmans/gaet/lts/v1.1/install.sh | bash
+curl -sSL https://raw.githubusercontent.com/ghaniyyrahmans/gaet/lts/v1.1/install.sh | bash
 ```
 
 **Windows (PowerShell):**
 ```powershell
-irm https://raw.githubusercontent.com/ghanirahmans/gaet/lts/v1.1/install.ps1 | iex
+irm https://raw.githubusercontent.com/ghaniyyrahmans/gaet/lts/v1.1/install.ps1 | iex
 ```
 
 Verify your installation:

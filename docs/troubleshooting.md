@@ -334,5 +334,5 @@ gaet log --follow # Real-time tailing
 ### Reinstall
 ```bash
 gaet uninstall
-# Then reinstall: curl -sSL https://raw.githubusercontent.com/ghanirahmans/gaet/lts/v1.1/install.sh | bash
+# Then reinstall: curl -sSL https://raw.githubusercontent.com/ghaniyyrahmans/gaet/lts/v1.1/install.sh | bash
 ```

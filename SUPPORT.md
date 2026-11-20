@@ -32,5 +32,5 @@ During its active LTS lifecycle, `v1.1.0 LTS` receives:
 
 ## Reporting Issues
 
-- **Bug Reports**: Submit issues via [GitHub Issues](https://github.com/ghanirahmans/gaet/issues).
+- **Bug Reports**: Submit issues via [GitHub Issues](https://github.com/ghaniyyrahmans/gaet/issues).
 - **Security Disclosures**: Refer to [SECURITY.md](SECURITY.md) for vulnerability reporting.

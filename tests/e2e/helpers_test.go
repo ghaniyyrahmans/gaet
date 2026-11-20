@@ -16,7 +16,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/ghanirahmans/gaet/pkg/core"
+	"github.com/ghaniyyrahmans/gaet/pkg/core"
 )
 
 // --- Binary ---

@@ -6,8 +6,8 @@ import (
 	"path/filepath"
 	"testing"
 
-	"github.com/ghanirahmans/gaet/pkg/backup"
-	"github.com/ghanirahmans/gaet/pkg/core"
+	"github.com/ghaniyyrahmans/gaet/pkg/backup"
+	"github.com/ghaniyyrahmans/gaet/pkg/core"
 )
 
 func TestRunPush_DryRun(t *testing.T) {

@@ -10,7 +10,7 @@ import (
 	"sort"
 	"strings"
 
-	"github.com/ghanirahmans/gaet/pkg/core"
+	"github.com/ghaniyyrahmans/gaet/pkg/core"
 )
 
 // ConfigKey describes a supported configuration variable.

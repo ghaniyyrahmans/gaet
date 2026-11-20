@@ -5,7 +5,7 @@ import (
 	"os"
 	"testing"
 
-	"github.com/ghanirahmans/gaet/pkg/status"
+	"github.com/ghaniyyrahmans/gaet/pkg/status"
 )
 
 func TestRunCheck_NoConfig(t *testing.T) {

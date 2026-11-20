@@ -40,13 +40,13 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ghanirahmans/gaet.git",
+    "url": "git+https://github.com/ghaniyyrahmans/gaet.git",
     "directory": "sdk"
   },
   "bugs": {
-    "url": "https://github.com/ghanirahmans/gaet/issues"
+    "url": "https://github.com/ghaniyyrahmans/gaet/issues"
   },
-  "homepage": "https://github.com/ghanirahmans/gaet#readme",
+  "homepage": "https://github.com/ghaniyyrahmans/gaet#readme",
   "engines": {
     "node": ">=18.0.0"
   },

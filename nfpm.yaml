@@ -21,9 +21,9 @@ platform: linux
 version: ${VERSION}
 
 # Update the maintainer email if you prefer a non-noreply contact address.
-maintainer: "Ghani Rahman <ghanirahmans@users.noreply.github.com>"
+maintainer: "Ghani Rahman <ghaniyyrahmans@users.noreply.github.com>"
 vendor: gaet
-homepage: https://github.com/ghanirahmans/gaet
+homepage: https://github.com/ghaniyyrahmans/gaet
 license: MIT
 section: utils
 priority: optional

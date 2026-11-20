@@ -11,8 +11,8 @@ import (
 	"path/filepath"
 	"testing"
 
-	"github.com/ghanirahmans/gaet/pkg/core"
-	"github.com/ghanirahmans/gaet/pkg/serve"
+	"github.com/ghaniyyrahmans/gaet/pkg/core"
+	"github.com/ghaniyyrahmans/gaet/pkg/serve"
 )
 
 // newTestServer creates an httptest.Server backed by the real serve.Handler().

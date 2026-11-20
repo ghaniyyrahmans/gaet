@@ -9,7 +9,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/ghanirahmans/gaet/pkg/core"
+	"github.com/ghaniyyrahmans/gaet/pkg/core"
 )
 
 func execCommand(name string, args ...string) *exec.Cmd {

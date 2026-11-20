@@ -104,7 +104,7 @@ func Die(msg string, code int) *GaetError {
 		fmt.Fprintf(os.Stderr, "  %s[FAIL]%s  %s\n", ColorBRed, ColorReset, msg)
 	}
 	if !IsPlain() && !Quiet {
-		fmt.Fprintf(os.Stderr, "  %sTroubleshooting: %shttps://github.com/ghanirahmans/gaet/blob/main/TROUBLESHOOTING.md%s\n",
+		fmt.Fprintf(os.Stderr, "  %sTroubleshooting: %shttps://github.com/ghaniyyrahmans/gaet/blob/main/TROUBLESHOOTING.md%s\n",
 			ColorDim, ColorCyan, ColorReset)
 	}
 	return &GaetError{Code: code, Message: msg}

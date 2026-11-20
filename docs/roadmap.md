@@ -36,7 +36,7 @@ The prior Python SDK goal (`import gaet` / PyPI) was **Superseded** — see ADR-
 
 ### Phase 5: Global Distribution & Container Ecosystem
 - [ ] **Package Managers**: Official Homebrew Formula (`brew install gaet`), WinGet package (`winget install gaet`), and Debian/RPM packages.
-- [ ] **Official Docker Image**: Ultra-lightweight Scratch/Alpine container (`docker run ghanirahmans/gaet`) tailored for Kubernetes CronJobs and Docker Compose setups.
+- [ ] **Official Docker Image**: Ultra-lightweight Scratch/Alpine container (`docker run ghaniyyrahmans/gaet`) tailored for Kubernetes CronJobs and Docker Compose setups.
 
 ### Phase 6: Database Time Travel & Schema Intelligence
 - [ ] **Snapshot Difference Inspector (`gaet diff`)**: Compare schema structure and row count drift between snapshots, or local vs cloud databases.
@@ -52,7 +52,7 @@ The prior Python SDK goal (`import gaet` / PyPI) was **Superseded** — see ADR-
 - [ ] **Predictive Capacity Analytics (`gaet stats`)**: Storage growth forecasting to predict disk space exhaustion before it occurs.
 
 ### Phase 9: Developer Ecosystem & IDE Integrations
-- [ ] **Official GitHub Action (`ghanirahmans/gaet-action@v1`)**: Pre-built CI/CD step for database backups prior to automated deployment or migration tasks.
+- [ ] **Official GitHub Action (`ghaniyyrahmans/gaet-action@v1`)**: Pre-built CI/CD step for database backups prior to automated deployment or migration tasks.
 - [ ] **VS Code Extension**: Lightweight extension for monitoring Gaet status, triggering backups, and launching `gaet serve` directly inside VS Code.
 
 ### Phase 10: Next-Gen Peer-to-Peer & High-Availability Engine

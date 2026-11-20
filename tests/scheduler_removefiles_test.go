@@ -6,7 +6,7 @@ import (
 	"runtime"
 	"testing"
 
-	"github.com/ghanirahmans/gaet/pkg/scheduler"
+	"github.com/ghaniyyrahmans/gaet/pkg/scheduler"
 )
 
 // TestRemoveFiles_Systemd verifies that RemoveFiles deletes leftover systemd

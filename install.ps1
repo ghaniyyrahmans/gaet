@@ -1,6 +1,6 @@
 # ============================================================================
 # gaet v1.1.0 LTS — PowerShell One-liner Installer (Windows)
-# Usage: irm https://raw.githubusercontent.com/ghanirahmans/gaet/lts/v1.1/install.ps1 | iex
+# Usage: irm https://raw.githubusercontent.com/ghaniyyrahmans/gaet/lts/v1.1/install.ps1 | iex
 # ============================================================================
 $ErrorActionPreference = "Stop"
 
@@ -30,9 +30,9 @@ if (Test-Path "go.mod") {
 } else {
     # Portable, per-user install (added to the user PATH below).
     # For a machine-wide install with system PATH, use the MSI:
-    #   https://github.com/ghanirahmans/gaet/releases/latest/download/gaet-windows-amd64.msi
+    #   https://github.com/ghaniyyrahmans/gaet/releases/latest/download/gaet-windows-amd64.msi
     Write-Host "  [INFO]  Downloading latest gaet release (windows/amd64)..." -ForegroundColor Yellow
-    $DownloadUrl = "https://github.com/ghanirahmans/gaet/releases/latest/download/gaet-windows-amd64.exe"
+    $DownloadUrl = "https://github.com/ghaniyyrahmans/gaet/releases/latest/download/gaet-windows-amd64.exe"
     Invoke-WebRequest -Uri $DownloadUrl -OutFile $BinaryPath
     Write-Host "  [ OK ]  Downloaded binary -> $BinaryPath" -ForegroundColor Green
 }

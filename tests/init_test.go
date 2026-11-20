@@ -7,8 +7,8 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/ghanirahmans/gaet/pkg/core"
-	gaetinit "github.com/ghanirahmans/gaet/pkg/init"
+	"github.com/ghaniyyrahmans/gaet/pkg/core"
+	gaetinit "github.com/ghaniyyrahmans/gaet/pkg/init"
 )
 
 func TestRunInit_NonInteractive_Default(t *testing.T) {

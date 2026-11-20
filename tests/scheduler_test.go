@@ -4,7 +4,7 @@ package tests
 import (
 	"testing"
 
-	"github.com/ghanirahmans/gaet/pkg/scheduler"
+	"github.com/ghaniyyrahmans/gaet/pkg/scheduler"
 )
 
 func TestIsActive_NonExistentService(t *testing.T) {

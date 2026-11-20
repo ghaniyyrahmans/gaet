@@ -58,7 +58,7 @@ jobs:
           fi
           echo "Building gaet ${VERSION} (tag ${TAG})"
           mkdir -p build dist
-          LDFLAGS="-s -w -X github.com/ghanirahmans/gaet/pkg/core.Version=${VERSION}"
+          LDFLAGS="-s -w -X github.com/ghaniyyrahmans/gaet/pkg/core.Version=${VERSION}"
           GOOS=linux GOARCH=amd64 go build -ldflags="$LDFLAGS" -o build/gaet-linux-amd64 ./cmd/gaet
           GOOS=linux GOARCH=arm64 go build -ldflags="$LDFLAGS" -o build/gaet-linux-arm64 ./cmd/gaet
           ls -lh build/
@@ -135,7 +135,7 @@ jobs:
           New-Item -ItemType Directory -Force -Path build,dist | Out-Null
 
           # Portable .exe
-          go build -ldflags="-s -w -X github.com/ghanirahmans/gaet/pkg/core.Version=$v" -o build/gaet-windows-amd64.exe ./cmd/gaet
+          go build -ldflags="-s -w -X github.com/ghaniyyrahmans/gaet/pkg/core.Version=$v" -o build/gaet-windows-amd64.exe ./cmd/gaet
           Copy-Item build/gaet-windows-amd64.exe dist/gaet-windows-amd64.exe
 
           # Real WiX v3 toolset (candle.exe + light.exe). It ships with the
@@ -194,7 +194,7 @@ jobs:
           fi
           echo "Building gaet ${VERSION} (tag ${TAG})"
           mkdir -p build dist
-          LDFLAGS="-s -w -X github.com/ghanirahmans/gaet/pkg/core.Version=${VERSION}"
+          LDFLAGS="-s -w -X github.com/ghaniyyrahmans/gaet/pkg/core.Version=${VERSION}"
           for ARCH in amd64 arm64; do
             GOOS=darwin GOARCH="${ARCH}" go build -ldflags="$LDFLAGS" -o "build/gaet-darwin-${ARCH}" ./cmd/gaet
 

@@ -6,8 +6,8 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/ghanirahmans/gaet/pkg/config"
-	"github.com/ghanirahmans/gaet/pkg/core"
+	"github.com/ghaniyyrahmans/gaet/pkg/config"
+	"github.com/ghaniyyrahmans/gaet/pkg/core"
 )
 
 func TestRunGet_ShowsList(t *testing.T) {

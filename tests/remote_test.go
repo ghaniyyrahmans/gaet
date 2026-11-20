@@ -5,8 +5,8 @@ import (
 	"os"
 	"testing"
 
-	"github.com/ghanirahmans/gaet/pkg/core"
-	"github.com/ghanirahmans/gaet/pkg/remote"
+	"github.com/ghaniyyrahmans/gaet/pkg/core"
+	"github.com/ghaniyyrahmans/gaet/pkg/remote"
 )
 
 func TestRunRemote_ShowUnconfigured(t *testing.T) {

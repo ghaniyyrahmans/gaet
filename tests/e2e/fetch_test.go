@@ -7,7 +7,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/ghanirahmans/gaet/pkg/core"
+	"github.com/ghaniyyrahmans/gaet/pkg/core"
 )
 
 // D1: Diverge local, then fetch --yes — local row counts == remote's

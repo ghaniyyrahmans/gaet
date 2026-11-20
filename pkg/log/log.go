@@ -8,7 +8,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/ghanirahmans/gaet/pkg/core"
+	"github.com/ghaniyyrahmans/gaet/pkg/core"
 )
 
 // LogOptions holds flags for `gaet log`.

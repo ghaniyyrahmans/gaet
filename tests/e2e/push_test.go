@@ -12,7 +12,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/ghanirahmans/gaet/pkg/core"
+	"github.com/ghaniyyrahmans/gaet/pkg/core"
 )
 
 // B1: Seeded local → push — all tables present on remote with exact row counts

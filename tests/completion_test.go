@@ -5,7 +5,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/ghanirahmans/gaet/pkg/completion"
+	"github.com/ghaniyyrahmans/gaet/pkg/completion"
 )
 
 func TestRunCompletion_Bash(t *testing.T) {

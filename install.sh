@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # ============================================================================
 # gaet v1.1.0 LTS — PostgreSQL Database Backup & Cloud Sync CLI
-# Usage: curl -sSL https://raw.githubusercontent.com/ghanirahmans/gaet/lts/v1.1/install.sh | bash
+# Usage: curl -sSL https://raw.githubusercontent.com/ghaniyyrahmans/gaet/lts/v1.1/install.sh | bash
 # ============================================================================
 set -eo pipefail
 
@@ -46,7 +46,7 @@ if [ -f "go.mod" ] && command -v go &>/dev/null; then
     echo "  [ OK ]  Built gaet binary -> $GAET_BIN_DIR/gaet"
 elif command -v go &>/dev/null; then
     echo "  [INFO]  Installing gaet via go install..."
-    GOPROXY=direct GOBIN="$GAET_BIN_DIR" go install github.com/ghanirahmans/gaet/cmd/gaet@latest
+    GOPROXY=direct GOBIN="$GAET_BIN_DIR" go install github.com/ghaniyyrahmans/gaet/cmd/gaet@latest
     echo "  [ OK ]  Installed gaet binary -> $GAET_BIN_DIR/gaet"
 else
     # Fallback to downloading the GitHub Release archive for this platform
@@ -56,7 +56,7 @@ else
         x86_64) ARCH="amd64" ;;
         aarch64|arm64) ARCH="arm64" ;;
     esac
-    BIN_URL="https://github.com/ghanirahmans/gaet/releases/latest/download/gaet-${OS}-${ARCH}.tar.gz"
+    BIN_URL="https://github.com/ghaniyyrahmans/gaet/releases/latest/download/gaet-${OS}-${ARCH}.tar.gz"
     echo "  [INFO]  Downloading gaet (${OS}/${ARCH})..."
     TMP="$(mktemp -d)"
     if curl -fsSL "$BIN_URL" -o "$TMP/gaet.tar.gz" && tar -xzf "$TMP/gaet.tar.gz" -C "$TMP" gaet; then
@@ -68,7 +68,7 @@ else
         rm -rf "$TMP"
         echo "  [WARN]  Could not download pre-compiled binary. Building locally if Go is available..."
         if command -v go &>/dev/null; then
-            GOPROXY=direct GOBIN="$GAET_BIN_DIR" go install github.com/ghanirahmans/gaet/cmd/gaet@latest
+            GOPROXY=direct GOBIN="$GAET_BIN_DIR" go install github.com/ghaniyyrahmans/gaet/cmd/gaet@latest
         else
             echo "  [FAIL]  Installation failed. Please install Go or check GitHub release assets."
             exit 1
@@ -82,7 +82,7 @@ chmod +x "$GAET_BIN_DIR/gaet" 2>/dev/null || true
 if [ ! -f "$GAET_CONFIG/.env" ]; then
     cat > "$GAET_CONFIG/.env" << 'EOF'
 # gaet configuration
-# Docs: https://github.com/ghanirahmans/gaet#configuration
+# Docs: https://github.com/ghaniyyrahmans/gaet#configuration
 
 # Local database
 GAET_LOCAL_URL=postgresql://postgres@127.0.0.1:5432/postgres
@@ -118,5 +118,5 @@ echo "    2. Check:      gaet check"
 echo "    3. Backup:     gaet push"
 echo "    4. Dashboard:  gaet serve"
 echo ""
-echo "  Docs: https://github.com/ghanirahmans/gaet"
+echo "  Docs: https://github.com/ghaniyyrahmans/gaet"
 echo ""

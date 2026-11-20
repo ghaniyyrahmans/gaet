@@ -183,4 +183,4 @@ import type {
 
 ## License
 
-MIT © [Ghani Rahman](https://github.com/ghanirahmans)
+MIT © [Ghani Rahman](https://github.com/ghaniyyrahmans)

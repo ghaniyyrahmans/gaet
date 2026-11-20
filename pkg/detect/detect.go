@@ -7,7 +7,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/ghanirahmans/gaet/pkg/core"
+	"github.com/ghaniyyrahmans/gaet/pkg/core"
 )
 
 // DBInstance holds information about a discovered database instance.

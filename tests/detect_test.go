@@ -4,7 +4,7 @@ package tests
 import (
 	"testing"
 
-	"github.com/ghanirahmans/gaet/pkg/detect"
+	"github.com/ghaniyyrahmans/gaet/pkg/detect"
 )
 
 func TestDetectLocalPG_EmptyPsqlPath(t *testing.T) {

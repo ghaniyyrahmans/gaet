@@ -23,7 +23,7 @@ Before writing any code, please review our core architectural rules documented i
 Clone the repository and verify the Go test suite:
 
 ```bash
-git clone https://github.com/ghanirahmans/gaet.git
+git clone https://github.com/ghaniyyrahmans/gaet.git
 cd gaet
 go test ./... -count=1
 ```

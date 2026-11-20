@@ -433,7 +433,7 @@ Align `installer.py` with the CLI's variable names, or better: have `installer.p
 **Description:**
 
 ```powershell
-$GITHUB_RAW = "https://raw.githubusercontent.com/ghanirahmans/gaet/main"
+$GITHUB_RAW = "https://raw.githubusercontent.com/ghaniyyrahmans/gaet/main"
 ```
 
 The repository uses `master` as its default branch (confirmed via `git branch` and all `install.sh` references). The PowerShell installer fetches from `main`, which does not exist. All download requests will return HTTP 404.
@@ -441,7 +441,7 @@ The repository uses `master` as its default branch (confirmed via `git branch` a
 **Remediation:**
 
 ```powershell
-$GITHUB_RAW = "https://raw.githubusercontent.com/ghanirahmans/gaet/master"
+$GITHUB_RAW = "https://raw.githubusercontent.com/ghaniyyrahmans/gaet/master"
 ```
 
 ---
