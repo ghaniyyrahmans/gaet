@@ -1,9 +1,11 @@
-# @ghanirahmans/gaet
+# @ghaniyyrahmans/gaet
 
 Official TypeScript and JavaScript client SDK for **Gaet**, a database backup and cloud sync CLI tool.
 
-[![npm version](https://img.shields.io/npm/v/@ghanirahmans/gaet.svg)](https://www.npmjs.com/package/@ghanirahmans/gaet)
+[![npm version](https://img.shields.io/npm/v/@ghaniyyrahmans/gaet.svg)](https://www.npmjs.com/package/@ghaniyyrahmans/gaet)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
+> **Note:** this package was previously published as `@ghanirahmans/gaet`. The name changed, the API did not. See [Migrating from `@ghanirahmans/gaet`](#migrating-from-ghanirahmansgaet).
 
 ## How It Works
 
@@ -12,13 +14,13 @@ This SDK is a lightweight TypeScript client wrapper for the `gaet serve` REST AP
 ## Installation
 
 ```bash
-npm install @ghanirahmans/gaet
+npm install @ghaniyyrahmans/gaet
 # or
-pnpm add @ghanirahmans/gaet
+pnpm add @ghaniyyrahmans/gaet
 # or
-yarn add @ghanirahmans/gaet
+yarn add @ghaniyyrahmans/gaet
 # or
-bun add @ghanirahmans/gaet
+bun add @ghaniyyrahmans/gaet
 ```
 
 ## Prerequisites
@@ -38,7 +40,7 @@ gaet serve --auto
 ### Option A: Auto-Start Server from Code (Recommended for Node.js)
 
 ```typescript
-import { gaet } from '@ghanirahmans/gaet';
+import { gaet } from '@ghaniyyrahmans/gaet';
 
 // Start daemon with inline environment configuration
 await gaet.startServer({
@@ -64,7 +66,7 @@ await gaet.stopServer();
 Start `gaet serve` in a terminal or as an OS service (`gaet serve --auto`), then connect directly:
 
 ```typescript
-import { gaet } from '@ghanirahmans/gaet';
+import { gaet } from '@ghaniyyrahmans/gaet';
 
 // Check connection status
 const status = await gaet.status();
@@ -80,7 +82,7 @@ await gaet.push();
 
 ```typescript
 import { NextResponse } from 'next/server';
-import { gaet } from '@ghanirahmans/gaet';
+import { gaet } from '@ghaniyyrahmans/gaet';
 
 export async function POST() {
   try {
@@ -99,7 +101,7 @@ export async function POST() {
 
 ```tsx
 import React, { useState } from 'react';
-import { gaet } from '@ghanirahmans/gaet';
+import { gaet } from '@ghaniyyrahmans/gaet';
 
 export function BackupButton() {
   const [loading, setLoading] = useState(false);
@@ -131,7 +133,7 @@ export function BackupButton() {
 ## Custom Client Options
 
 ```typescript
-import { GaetClient } from '@ghanirahmans/gaet';
+import { GaetClient } from '@ghaniyyrahmans/gaet';
 
 const gaetClient = new GaetClient({
   baseUrl: 'http://127.0.0.1:6161',
@@ -178,9 +180,25 @@ import type {
 
   GaetLogsResponse,
   GaetLogEntry,
-} from '@ghanirahmans/gaet';
+} from '@ghaniyyrahmans/gaet';
 ```
+
+## Migrating from `@ghanirahmans/gaet`
+
+The SDK API is unchanged. Only the package name moved.
+
+```bash
+npm uninstall @ghanirahmans/gaet
+npm install @ghaniyyrahmans/gaet
+```
+
+```diff
+- import { gaet } from '@ghanirahmans/gaet';
++ import { gaet } from '@ghaniyyrahmans/gaet';
+```
+
+`@ghanirahmans/gaet` is deprecated and receives no further updates.
 
 ## License
 
-MIT © [Ghani Rahman](https://github.com/ghaniyyrahmans)
+MIT © [Ghaniyyir Rahman Sudarsono](https://github.com/ghaniyyrahmans)

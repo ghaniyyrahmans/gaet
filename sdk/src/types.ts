@@ -1,5 +1,5 @@
 /**
- * Type definitions for the @ghanirahmans/gaet SDK.
+ * Type definitions for the @ghaniyyrahmans/gaet SDK.
  *
  * These interfaces are derived from the REST API response shapes emitted by
  * `pkg/serve/server.go` (`sendJSON(w, map[string]any{...})`). When the API

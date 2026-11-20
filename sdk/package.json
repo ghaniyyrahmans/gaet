@@ -1,6 +1,6 @@
 {
-  "name": "@ghanirahmans/gaet",
-  "version": "1.1.10",
+  "name": "@ghaniyyrahmans/gaet",
+  "version": "1.2.0",
   "type": "module",
   "description": "Official TypeScript/JavaScript SDK client for Gaet - Zero-dependency PostgreSQL Database Backup & Cloud Sync CLI & Service",
   "main": "./dist/index.js",
@@ -36,7 +36,7 @@
     "react",
     "typescript"
   ],
-  "author": "Ghani Rahman <ghaniyrahmans@gmail.com>",
+  "author": "Ghaniyyir Rahman Sudarsono <ghaniyyirrahmanss@gmail.com>",
   "license": "MIT",
   "repository": {
     "type": "git",

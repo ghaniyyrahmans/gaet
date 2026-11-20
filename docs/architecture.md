@@ -79,7 +79,7 @@ gaet/
 │   ├── snapshots/               # Local snapshot discovery, rotation & management
 │   └── status/                  # Health check & doctor diagnostic validators
 ├── tests/                       # Comprehensive integration test suite (Go)
-├── sdk/                         # TypeScript/JavaScript SDK (@ghanirahmans/gaet)
+├── sdk/                         # TypeScript/JavaScript SDK (@ghaniyyrahmans/gaet)
 ├── docs/                        # Project documentation, architecture ADRs & guides
 ├── install.sh / install.ps1     # One-liner binary installers
 ├── go.mod                       # Go module definition (module: github.com/ghaniyyrahmans/gaet, go 1.21)
@@ -365,7 +365,7 @@ gaet auto / gaet push --auto=N
 
 ### TypeScript SDK
 
-`@ghanirahmans/gaet` (`sdk/`) is the official client SDK. It wraps the REST API above via `fetch`, with an optional `startServer()` method that auto-spawns `gaet serve` as a child process from Node.js.
+`@ghaniyyrahmans/gaet` (`sdk/`) is the official client SDK. It wraps the REST API above via `fetch`, with an optional `startServer()` method that auto-spawns `gaet serve` as a child process from Node.js.
 
 ---
 

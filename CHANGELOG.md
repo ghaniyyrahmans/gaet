@@ -2,6 +2,14 @@
 
 All notable changes to gaet are documented here.
 
+## [1.2.0] — 2026-11-21
+
+### Changed
+- **npm package moved to `@ghaniyyrahmans/gaet`**: the SDK is now published under the new npm scope, continuing the `1.x` line. The API is unchanged.
+  - Install with `npm i @ghaniyyrahmans/gaet`.
+  - `@ghanirahmans/gaet` is deprecated and will not receive further updates.
+  - Repository and module path moved to `github.com/ghaniyyrahmans/gaet` (account rename). Go importers must update their module path.
+
 ## [1.1.2] — 2026-08-17
 
 ### Added & Improved
