@@ -2,7 +2,7 @@
 
 > [!WARNING]
 > **Deprecation & Maintenance Notice**:
-> The Python edition of **Gaet** (`v1.0.0 LTS`) is officially in maintenance mode. Active feature development and performance enhancements have moved exclusively to the **Golang Engine (`v1.1.0 LTS+`)**.
+> The Python edition of **Gaet** (`v1.0.0 LTS`) is officially in maintenance mode. Active feature development and performance enhancements have moved exclusively to the **Golang Engine (`v1.2.1+`)**.
 > 
 > Critical security patches for the Python engine will be maintained until **August 2027**, but no new CLI features or subcommands will be added to the Python edition. All users are strongly encouraged to migrate to the compiled single-binary Go release.
 
@@ -49,12 +49,12 @@ Run the automated one-liner installer to replace the legacy Python executable:
 
 **Linux / macOS:**
 ```bash
-curl -sSL https://raw.githubusercontent.com/ghaniyyrahmans/gaet/lts/v1.1/install.sh | bash
+curl -sSL https://raw.githubusercontent.com/ghaniyyrahmans/gaet/v1.2.1/install.sh | bash
 ```
 
 **Windows (PowerShell):**
 ```powershell
-irm https://raw.githubusercontent.com/ghaniyyrahmans/gaet/lts/v1.1/install.ps1 | iex
+irm https://raw.githubusercontent.com/ghaniyyrahmans/gaet/v1.2.1/install.ps1 | iex
 ```
 
 Verify your installation:

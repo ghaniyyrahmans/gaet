@@ -28,7 +28,7 @@ jobs:
       
       - name: Install gaet
         run: |
-          curl -sSL https://raw.githubusercontent.com/ghaniyyrahmans/gaet/lts/v1.1/install.sh | bash
+          curl -sSL https://raw.githubusercontent.com/ghaniyyrahmans/gaet/v1.2.1/install.sh | bash
       
       - name: Configure
         run: |
@@ -62,7 +62,7 @@ backup:
   stage: deploy
   image: ubuntu-latest
   script:
-    - curl -sSL https://raw.githubusercontent.com/ghaniyyrahmans/gaet/lts/v1.1/install.sh | bash
+    - curl -sSL https://raw.githubusercontent.com/ghaniyyrahmans/gaet/v1.2.1/install.sh | bash
     - gaet set GAET_REMOTE_URL="$CLOUD_DB_URL"
     - gaet push --json
   only:
@@ -80,7 +80,7 @@ pipeline {
     stages {
         stage('Backup') {
             steps {
-                sh 'curl -sSL https://raw.githubusercontent.com/ghaniyyrahmans/gaet/lts/v1.1/install.sh | bash'
+                sh 'curl -sSL https://raw.githubusercontent.com/ghaniyyrahmans/gaet/v1.2.1/install.sh | bash'
                 sh 'gaet set GAET_REMOTE_URL=${CLOUD_DB_URL}'
                 sh 'gaet push'
             }
@@ -109,7 +109,7 @@ jobs:
     steps:
       - run:
           name: Install gaet
-          command: curl -sSL https://raw.githubusercontent.com/ghaniyyrahmans/gaet/lts/v1.1/install.sh | bash
+          command: curl -sSL https://raw.githubusercontent.com/ghaniyyrahmans/gaet/v1.2.1/install.sh | bash
       - run:
           name: Run backup
           command: gaet push --json
@@ -123,7 +123,7 @@ For environments without internet access:
 
 1. **Download installer + archive** (from a machine with internet):
    ```bash
-   curl -sSL https://raw.githubusercontent.com/ghaniyyrahmans/gaet/lts/v1.1/install.sh > install.sh
+   curl -sSL https://raw.githubusercontent.com/ghaniyyrahmans/gaet/v1.2.1/install.sh > install.sh
    curl -sSL https://github.com/ghaniyyrahmans/gaet/releases/latest/download/gaet-linux-amd64.tar.gz > gaet-linux-amd64.tar.gz
    ```
 
@@ -225,5 +225,5 @@ The installer (`install.sh`) writes to `~/.local/bin` by default (user-local bin
 ```bash
 echo 'export PATH="$HOME/.local/bin:$PATH"' >> ~/.bashrc
 source ~/.bashrc
-curl -sSL https://raw.githubusercontent.com/ghaniyyrahmans/gaet/lts/v1.1/install.sh | bash
+curl -sSL https://raw.githubusercontent.com/ghaniyyrahmans/gaet/v1.2.1/install.sh | bash
 ```

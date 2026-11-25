@@ -12,7 +12,7 @@ const (
 	DocsURL        = "https://github.com/ghaniyyrahmans/gaet"
 	TroubleshootURL = "https://github.com/ghaniyyrahmans/gaet/blob/main/docs/troubleshooting.md"
 	GitHubAPI      = "https://api.github.com/repos/ghaniyyrahmans/gaet/releases/latest"
-	GitHubRaw      = "https://raw.githubusercontent.com/ghaniyyrahmans/gaet/lts/v1.1"
+	GitHubRaw      = "https://raw.githubusercontent.com/ghaniyyrahmans/gaet/v1.2.1"
 
 	DefLocalHost     = "127.0.0.1"
 	DefLocalPort     = "5432"
@@ -32,7 +32,7 @@ const (
 // Version is the application version. It is a var (not const) so release builds
 // can inject the git tag via -ldflags "-X .../pkg/core.Version=<version>".
 // Local builds (no ldflags) keep this default value.
-var Version = "1.1.2"
+var Version = "1.2.1"
 
 // GaetDir returns the user data directory (~/.gaet or $GAET_DIR).
 func GaetDir() string {

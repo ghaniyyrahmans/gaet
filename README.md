@@ -4,7 +4,7 @@
 [![Engine: Go](https://img.shields.io/badge/engine-Go%20(Recommended)-brightgreen.svg)](SUPPORT.md)
 [![Alternative: Python](https://img.shields.io/badge/legacy-Python%20(Alternative)-yellow.svg)](SUPPORT.md)
 [![Platform: Linux | macOS | Windows](https://img.shields.io/badge/platform-linux%20%7C%20macOS%20%7C%20Windows-supported-brightgreen.svg)]()
-[![v1.1.0 LTS](https://img.shields.io/badge/v1.1.0-LTS-blue?label=release)](SUPPORT.md)
+[![v1.2.1](https://img.shields.io/badge/v1.2.1-blue?label=release)](SUPPORT.md)
 
 > **gaet** is a zero-dependency database backup and cloud synchronization CLI.
 
@@ -88,7 +88,7 @@ Get up and running in under 2 minutes:
 
 ```bash
 # 1. Install gaet CLI (LTS Release)
-curl -sSL https://raw.githubusercontent.com/ghaniyyrahmans/gaet/lts/v1.1/install.sh | bash
+curl -sSL https://raw.githubusercontent.com/ghaniyyrahmans/gaet/v1.2.1/install.sh | bash
 
 # 2. Run interactive setup wizard
 gaet init
@@ -108,12 +108,12 @@ gaet status
 
 **Linux / macOS (Bash):**
 ```bash
-curl -sSL https://raw.githubusercontent.com/ghaniyyrahmans/gaet/lts/v1.1/install.sh | bash
+curl -sSL https://raw.githubusercontent.com/ghaniyyrahmans/gaet/v1.2.1/install.sh | bash
 ```
 
 **Windows (PowerShell):**
 ```powershell
-irm https://raw.githubusercontent.com/ghaniyyrahmans/gaet/lts/v1.1/install.ps1 | iex
+irm https://raw.githubusercontent.com/ghaniyyrahmans/gaet/v1.2.1/install.ps1 | iex
 ```
 
 ### Method 2: Build from Source / Go Toolchain
@@ -162,7 +162,7 @@ Download from the [latest GitHub Release](https://github.com/ghaniyyrahmans/gaet
 ### Legacy Python Edition (Maintenance Mode)
 
 > [!WARNING]
-> The Python implementation (`v1.0.0 LTS`) is in maintenance mode. Active feature development has moved exclusively to the Golang Engine (`v1.1.0 LTS+`). Security patches for the Python engine will be maintained until August 2027, but no new features will be added.
+> The Python implementation (`v1.0.0 LTS`) is in maintenance mode. Active feature development has moved exclusively to the Golang Engine (`v1.2.1+`). Security patches for the Python engine will be maintained until August 2027, but no new features will be added.
 > 
 > - **Legacy Python 1-Liner**: `curl -sSL https://raw.githubusercontent.com/ghaniyyrahmans/gaet/lts/v1.0/install.sh | bash`
 > - **Legacy Python Pip**: `pip install git+https://github.com/ghaniyyrahmans/gaet.git@lts/v1.0`

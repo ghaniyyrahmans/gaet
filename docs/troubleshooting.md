@@ -123,7 +123,7 @@ pgrep -f "gaet" || echo "No gaet processes"
 
 **Cause:** Partitioned tables fail with `--clean` flag.
 
-**Fix:** Already fixed in v1.1.0 LTS. Ensure you're on latest version:
+**Fix:** Already fixed in v1.2.1. Ensure you're on latest version:
 ```bash
 gaet update
 ```
@@ -132,7 +132,7 @@ gaet update
 
 **Cause:** Custom types not dropped before restore.
 
-**Fix:** Same as above — v1.1.0 LTS handles this automatically via target reset engine.
+**Fix:** Same as above — v1.2.1 handles this automatically via target reset engine.
 
 ---
 
@@ -334,5 +334,5 @@ gaet log --follow # Real-time tailing
 ### Reinstall
 ```bash
 gaet uninstall
-# Then reinstall: curl -sSL https://raw.githubusercontent.com/ghaniyyrahmans/gaet/lts/v1.1/install.sh | bash
+# Then reinstall: curl -sSL https://raw.githubusercontent.com/ghaniyyrahmans/gaet/v1.2.1/install.sh | bash
 ```

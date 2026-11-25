@@ -1,6 +1,6 @@
 # ============================================================================
-# gaet v1.1.0 LTS — PowerShell One-liner Installer (Windows)
-# Usage: irm https://raw.githubusercontent.com/ghaniyyrahmans/gaet/lts/v1.1/install.ps1 | iex
+# gaet v1.2.1 — PowerShell One-liner Installer (Windows)
+# Usage: irm https://raw.githubusercontent.com/ghaniyyrahmans/gaet/v1.2.1/install.ps1 | iex
 # ============================================================================
 $ErrorActionPreference = "Stop"
 
@@ -9,7 +9,7 @@ $GaetConfig = Join-Path $env:USERPROFILE ".gaet"
 $BinaryPath = Join-Path $GaetBinDir "gaet.exe"
 
 Write-Host ""
-Write-Host "  ▌  gaet v1.1.0 LTS — Database Backup & Cloud Sync CLI  ▌" -ForegroundColor Cyan
+Write-Host "  ▌  gaet v1.2.1 — Database Backup & Cloud Sync CLI  ▌" -ForegroundColor Cyan
 Write-Host ""
 
 # Create directories
@@ -60,4 +60,5 @@ if ($UserPath -notlike "*$GaetBinDir*") {
 Write-Host ""
 Write-Host "  ▌  Installation complete!  ▌" -ForegroundColor Cyan
 Write-Host "  Run 'gaet init' to configure database connections."
+Write-Host "  Docs: https://gaet.ghaniyyirrahmans.me/" -ForegroundColor Cyan
 Write-Host ""
