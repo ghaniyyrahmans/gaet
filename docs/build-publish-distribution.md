@@ -79,8 +79,10 @@ Workflow: [npm-publish.yml](../.github/workflows/npm-publish.yml)
   commit; the published artifact is always correct.
 - Steps: `npm ci` → `npm run build` → `npm test`. `sdk/dist/` is generated here
   and gitignored; it is not committed.
-- An `npm view` guard skips publishing when that version already exists, making
-  a re-pushed tag harmless.
+- An `npm view` guard skips publishing when that version is already live. A
+  staged-but-unpublished version is invisible to `npm view`, so an `E409` from
+  `npm stage publish` is also treated as an idempotent success. A re-pushed tag
+  is therefore harmless.
 - Publishing uses `npm stage publish --access public` with npm Trusted Publishing
   (OIDC, `id-token: write`, no `NODE_AUTH_TOKEN`). A staged publish needs
   maintainer approval in npm before it goes live. Changing the workflow filename

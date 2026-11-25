@@ -100,4 +100,16 @@ jobs:
         if: steps.published.outputs.yes != 'true'
         run: |
           cd sdk
-          npm stage publish --access public
+          set +e
+          OUTPUT="$(npm stage publish --access public 2>&1)"
+          RC=$?
+          printf '%s\n' "$OUTPUT"
+          if [ "$RC" -ne 0 ]; then
+            # A staged-but-unpublished version is not visible to `npm view`, yet
+            # staging it again returns E409. Treat that as an idempotent success.
+            if printf '%s' "$OUTPUT" | grep -q 'E409\|Cannot stage previously published version'; then
+              echo "Version already staged; waiting for maintainer approval."
+            else
+              exit "$RC"
+            fi
+          fi
