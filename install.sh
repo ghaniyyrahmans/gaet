@@ -6,7 +6,7 @@
 set -eo pipefail
 
 # Single version pin for this installer. Update this one line on each release.
-GAET_VERSION="1.2.1"
+GAET_VERSION="1.2.2"
 GAET_BIN_DIR="$HOME/.local/bin"
 GAET_CONFIG="$HOME/.gaet"
 

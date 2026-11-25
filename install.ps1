@@ -5,7 +5,7 @@
 $ErrorActionPreference = "Stop"
 
 # Single version pin for this installer. Update this one line on each release.
-$GaetVersion = "1.2.1"
+$GaetVersion = "1.2.2"
 $GaetBinDir = Join-Path $env:USERPROFILE ".local\bin"
 $GaetConfig = Join-Path $env:USERPROFILE ".gaet"
 $BinaryPath = Join-Path $GaetBinDir "gaet.exe"
