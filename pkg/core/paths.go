@@ -5,6 +5,8 @@ import (
 	"os"
 	"path/filepath"
 	"runtime"
+	"runtime/debug"
+	"strings"
 )
 
 const (
@@ -12,7 +14,7 @@ const (
 	DocsURL        = "https://github.com/ghaniyyrahmans/gaet"
 	TroubleshootURL = "https://github.com/ghaniyyrahmans/gaet/blob/main/docs/troubleshooting.md"
 	GitHubAPI      = "https://api.github.com/repos/ghaniyyrahmans/gaet/releases/latest"
-	GitHubRaw      = "https://raw.githubusercontent.com/ghaniyyrahmans/gaet/v1.2.1"
+	InstallerBase  = "https://github.com/ghaniyyrahmans/gaet/releases/latest/download"
 
 	DefLocalHost     = "127.0.0.1"
 	DefLocalPort     = "5432"
@@ -31,8 +33,20 @@ const (
 
 // Version is the application version. It is a var (not const) so release builds
 // can inject the git tag via -ldflags "-X .../pkg/core.Version=<version>".
-// Local builds (no ldflags) keep this default value.
-var Version = "1.2.1"
+// Builds installed with `go install module/cmd@version` take the version from
+// embedded build info; plain `go build` without either stays at "dev".
+var Version = "dev"
+
+func init() {
+	if Version != "dev" {
+		return // -ldflags already supplied the release version
+	}
+	if bi, ok := debug.ReadBuildInfo(); ok {
+		if v := strings.TrimPrefix(bi.Main.Version, "v"); v != "" && v != "(devel)" {
+			Version = v
+		}
+	}
+}
 
 // GaetDir returns the user data directory (~/.gaet or $GAET_DIR).
 func GaetDir() string {

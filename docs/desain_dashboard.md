@@ -19,7 +19,7 @@
   5. Monitor live operation logs and auto-backup schedules.
 
 ### Information Architecture
-- **Header**: Branding, Version Badge (`gaet v1.2.1`), Navigation Tabs, Live Status Pulse Pill (`[ OK ] Engine Active`), Refresh Action, Theme Switcher (Dark/Light).
+- **Header**: Branding, Version Badge (`gaet vX.Y.Z`, read from `/api/status`), Navigation Tabs, Live Status Pulse Pill (`[ OK ] Engine Active`), Refresh Action, Theme Switcher (Dark/Light).
 - **Tab 1: Overview**: System Health Banners, Stat Cards (Local DB, Cloud Target, Snapshot Vault, Auto-Backup Daemon), Table Schema Matrix with per-table Sync Actions, Command Hub Bar, and Live Activity Log stream.
 - **Tab 2: Snapshots**: Local Snapshot Dump Vault Table (`~/.gaet/backups`), Filename Search Filter, Create Dump, Restore & Delete actions.
 - **Tab 3: CLI Logs**: Realtime CLI log stream viewer (`~/.gaet/gaet.log`), live filter input, auto-scroll toggle, and copy stream functionality.

@@ -294,6 +294,7 @@ func handleStatus(w http.ResponseWriter, r *http.Request) {
 	}
 
 	sendJSON(w, http.StatusOK, map[string]any{
+		"version":           core.Version,
 		"local_ok":          localOK,
 		"host":              core.CleanHost(h),
 		"port":              p,

@@ -390,6 +390,54 @@ if [[ "$path_errors" -eq 0 ]]; then
 fi
 echo ""
 
+# ── Check 9: release/version hygiene ──────────────────────────────────────────
+echo ":: Check 9 — release/version hygiene"
+version_errors=0
+json_v="$(grep -m1 '"version"' sdk/package.json | sed -E 's/.*"version"[[:space:]]*:[[:space:]]*"([^"]+)".*/\1/')"
+lock_v="$(grep -m1 '"version"' sdk/package-lock.json | sed -E 's/.*"version"[[:space:]]*:[[:space:]]*"([^"]+)".*/\1/')"
+sh_v="$(grep -m1 '^GAET_VERSION=' install.sh | cut -d'"' -f2)"
+ps_v="$(grep -m1 '^\$GaetVersion = ' install.ps1 | cut -d'"' -f2)"
+
+if [[ -n "$json_v" && "$json_v" == "$lock_v" ]]; then
+  check "sdk/package.json and package-lock.json versions agree ($json_v)" pass
+else
+  check "SDK package version drift" fail "package.json='$json_v' package-lock.json='$lock_v'"
+  version_errors=1
+fi
+if [[ -n "$sh_v" && "$sh_v" == "$ps_v" ]]; then
+  check "installer version pins agree ($sh_v)" pass
+else
+  check "installer version pin drift" fail "install.sh='$sh_v' install.ps1='$ps_v' — bump both lines together"
+  version_errors=1
+fi
+if grep -qE 'InstallerBase[[:space:]]*=.*releases/latest/download' pkg/core/paths.go; then
+  check "core.InstallerBase points at releases/latest/download" pass
+else
+  check "core.InstallerBase must point at releases/latest/download" fail "do not use main or a version-pinned tag"
+  version_errors=1
+fi
+if grep -qE 'raw\.githubusercontent\.com|github\.com/ghaniyyrahmans/gaet/releases' cmd/gaet/main.go; then
+  check "cmd/gaet/main.go has no hard-coded installer URL" fail "build installer URLs from core.InstallerBase instead"
+  version_errors=1
+elif grep -q 'core.InstallerBase' cmd/gaet/main.go; then
+  check "cmd/gaet/main.go derives installer URLs from core.InstallerBase" pass
+else
+  check "cmd/gaet/main.go must use core.InstallerBase" fail "installer URLs are duplicated"
+  version_errors=1
+fi
+for doc in "${DOC_FILES[@]}"; do
+  [[ -f "$doc" ]] || continue
+  is_historical "$doc" && continue
+  while IFS= read -r hit; do
+    check "non-release quick-install URL in $doc" fail "$hit — use .../releases/latest/download/install.sh"
+    version_errors=1
+  done < <(grep -nE '(raw\.githubusercontent\.com/ghaniyyrahmans/gaet/(main|v[0-9])|github\.com/ghaniyyrahmans/gaet/main/install)' "$doc" 2>/dev/null || true)
+done
+if [[ "$version_errors" -eq 0 ]]; then
+  check "Release surfaces have no stale manual version pins" pass
+fi
+echo ""
+
 # ── Summary ───────────────────────────────────────────────────────────────────
 echo "======================================"
 echo "Results: $PASS passed, $FAIL failed"

@@ -394,9 +394,9 @@ func runUpdate(args []string) error {
 		if runtime.GOOS == "windows" {
 			// Windows has no bash; use the PowerShell installer.
 			cmd = exec.Command("powershell", "-NoProfile", "-ExecutionPolicy", "Bypass", "-Command",
-				"irm https://raw.githubusercontent.com/ghaniyyrahmans/gaet/v1.2.1/install.ps1 | iex")
+				"irm "+core.InstallerBase+"/install.ps1 | iex")
 		} else {
-			cmd = exec.Command("bash", "-c", "curl -sSL https://raw.githubusercontent.com/ghaniyyrahmans/gaet/v1.2.1/install.sh | bash")
+			cmd = exec.Command("bash", "-c", "curl -sSL "+core.InstallerBase+"/install.sh | bash")
 		}
 		cmd.Stdout = os.Stdout
 		cmd.Stderr = os.Stderr
@@ -409,7 +409,7 @@ func runUpdate(args []string) error {
 	}
 
 	core.StatusOK(fmt.Sprintf("gaet is already up to date (v%s)", core.Version))
-	core.StatusArrow("Tip: Use 'gaet update --force' to re-install the v1.2.1 binary.")
+	core.StatusArrow("Tip: Use 'gaet update --force' to re-install the latest binary.")
 	core.PrintDocsFooter()
 	return nil
 }

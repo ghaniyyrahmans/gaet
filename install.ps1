@@ -1,15 +1,17 @@
 # ============================================================================
-# gaet v1.2.1 — PowerShell One-liner Installer (Windows)
-# Usage: irm https://raw.githubusercontent.com/ghaniyyrahmans/gaet/v1.2.1/install.ps1 | iex
+# gaet — PowerShell One-liner Installer (Windows)
+# Usage: irm https://github.com/ghaniyyrahmans/gaet/releases/latest/download/install.ps1 | iex
 # ============================================================================
 $ErrorActionPreference = "Stop"
 
+# Single version pin for this installer. Update this one line on each release.
+$GaetVersion = "1.2.1"
 $GaetBinDir = Join-Path $env:USERPROFILE ".local\bin"
 $GaetConfig = Join-Path $env:USERPROFILE ".gaet"
 $BinaryPath = Join-Path $GaetBinDir "gaet.exe"
 
 Write-Host ""
-Write-Host "  ▌  gaet v1.2.1 — Database Backup & Cloud Sync CLI  ▌" -ForegroundColor Cyan
+Write-Host "  ▌  gaet v${GaetVersion} — Database Backup & Cloud Sync CLI  ▌" -ForegroundColor Cyan
 Write-Host ""
 
 # Create directories
@@ -30,9 +32,9 @@ if (Test-Path "go.mod") {
 } else {
     # Portable, per-user install (added to the user PATH below).
     # For a machine-wide install with system PATH, use the MSI:
-    #   https://github.com/ghaniyyrahmans/gaet/releases/latest/download/gaet-windows-amd64.msi
-    Write-Host "  [INFO]  Downloading latest gaet release (windows/amd64)..." -ForegroundColor Yellow
-    $DownloadUrl = "https://github.com/ghaniyyrahmans/gaet/releases/latest/download/gaet-windows-amd64.exe"
+    #   https://github.com/ghaniyyrahmans/gaet/releases/download/v<version>/gaet-windows-amd64.msi
+    Write-Host "  [INFO]  Downloading gaet ${GaetVersion} (windows/amd64)..." -ForegroundColor Yellow
+    $DownloadUrl = "https://github.com/ghaniyyrahmans/gaet/releases/download/v${GaetVersion}/gaet-windows-amd64.exe"
     Invoke-WebRequest -Uri $DownloadUrl -OutFile $BinaryPath
     Write-Host "  [ OK ]  Downloaded binary -> $BinaryPath" -ForegroundColor Green
 }

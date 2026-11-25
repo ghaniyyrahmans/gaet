@@ -12,6 +12,8 @@ In-depth guides and reference material for the gaet CLI.
 
 - [Quickstart](quickstart.md) — install and run your first backup.
 - [Architecture & Design](architecture.md) — engine internals and data flow.
+- [Codebase Reference](codebase-reference.md) — struktur modul, pipeline, state, keamanan, REST API, SDK, dan panduan kontribusi.
+- [Build, Publish & Distribution](build-publish-distribution.md) — version sources, release pipeline, npm SDK publish, and installer version pins.
 - [CI/CD Integration](ci-cd-integration.md) — run gaet in pipelines.
 - [REST API & Sidecar Integration](rest-api-integration.md) — HTTP API for dashboards and services.
 - [Troubleshooting](troubleshooting.md) — common failures and fixes.

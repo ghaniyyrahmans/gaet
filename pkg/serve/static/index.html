@@ -1267,7 +1267,7 @@
       <div class="brand-block">
         <img src="/gaet-logo.png" alt="Gaet Studio" class="brand-logo" onerror="this.style.display='none';" />
         <div class="brand-text">
-          gaet <span class="version-tag">v1.2.1</span>
+          gaet <span class="version-tag" id="versionTag">...</span>
         </div>
         <div id="asciiTag" class="status-tag tag-ok">
           <span class="pulse-ring"></span> <span id="asciiTagText">[ OK ] Engine Active</span>
@@ -1887,6 +1887,8 @@
       try {
         const r = await fetch('/api/status');
         const d = await r.json();
+        const versionTag = document.getElementById('versionTag');
+        if (versionTag && d.version) versionTag.textContent = 'v' + d.version;
         renderOverview(d);
         if (manual) showToast('Dashboard status updated', 'ok');
       } catch (e) {

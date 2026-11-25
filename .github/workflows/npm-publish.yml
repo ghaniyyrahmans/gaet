@@ -1,11 +1,22 @@
 name: Publish NPM Package
 
+# A tag can fire both `push` and `release`; serialize so the version guard below
+# always sees the result of the earlier run.
+concurrency:
+  group: npm-publish-${{ github.ref }}
+  cancel-in-progress: false
+
 on:
+  # Primary trigger. release.yml listens to the same tag, so one tag push builds
+  # the binaries and stages the SDK together. A release published with the
+  # built-in GITHUB_TOKEN does not trigger other workflows, hence this trigger.
+  push:
+    tags:
+      - 'v*'
   release:
     types: [published]
-  # Manual trigger, e.g. when the release was published by another workflow using
-  # the built-in GITHUB_TOKEN (those events do not trigger downstream workflows):
-  #   gh workflow run npm-publish.yml --ref main -f version=1.1.8
+  # Manual re-publish / retry of a staged release:
+  #   gh workflow run npm-publish.yml --ref main -f version=X.Y.Z
   workflow_dispatch:
     inputs:
       version:
@@ -69,11 +80,24 @@ jobs:
           cd sdk
           npm test
 
+      # A re-pushed tag must not fail on an already-published version.
+      - name: Check version already published
+        id: published
+        working-directory: sdk
+        run: |
+          VERSION="${{ steps.version.outputs.version }}"
+          if npm view "@ghaniyyrahmans/gaet@${VERSION}" version >/dev/null 2>&1; then
+            echo "yes=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "yes=false" >> "$GITHUB_OUTPUT"
+          fi
+
       # Stage-only trusted publisher: releases require maintainer approval in npm.
       # No NODE_AUTH_TOKEN here; publishing authenticates via OIDC
       # (id-token: write above) using the npm Trusted Publisher configured for
       # this repo/workflow — no long-lived token.
       - name: Publish to NPM (OIDC trusted publishing)
+        if: steps.published.outputs.yes != 'true'
         run: |
           cd sdk
           npm stage publish --access public

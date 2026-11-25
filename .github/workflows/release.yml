@@ -244,6 +244,16 @@ jobs:
           path: dist
           merge-multiple: true
 
+      # The one-liners point at releases/latest/download, so publish the
+      # installers themselves as assets. They are checksummed with everything else.
+      - name: Checkout installer scripts
+        uses: actions/checkout@v4
+
+      - name: Add quick-install scripts to release assets
+        run: |
+          set -euo pipefail
+          cp install.sh install.ps1 dist/
+
       - name: Generate checksums
         run: |
           set -euo pipefail

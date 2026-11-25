@@ -1,15 +1,17 @@
 #!/usr/bin/env bash
 # ============================================================================
-# gaet v1.2.1 — PostgreSQL Database Backup & Cloud Sync CLI
-# Usage: curl -sSL https://raw.githubusercontent.com/ghaniyyrahmans/gaet/v1.2.1/install.sh | bash
+# gaet — PostgreSQL Database Backup & Cloud Sync CLI
+# Usage: curl -sSL https://github.com/ghaniyyrahmans/gaet/releases/latest/download/install.sh | bash
 # ============================================================================
 set -eo pipefail
 
+# Single version pin for this installer. Update this one line on each release.
+GAET_VERSION="1.2.1"
 GAET_BIN_DIR="$HOME/.local/bin"
 GAET_CONFIG="$HOME/.gaet"
 
 echo ""
-echo "  ▌  gaet v1.2.1 — PostgreSQL Database Backup & Cloud Sync CLI  ▌"
+echo "  ▌  gaet v${GAET_VERSION} — PostgreSQL Database Backup & Cloud Sync CLI  ▌"
 echo ""
 
 # ── 0. Check prerequisites ─────────────────────────────────────────────────
@@ -46,7 +48,7 @@ if [ -f "go.mod" ] && command -v go &>/dev/null; then
     echo "  [ OK ]  Built gaet binary -> $GAET_BIN_DIR/gaet"
 elif command -v go &>/dev/null; then
     echo "  [INFO]  Installing gaet via go install..."
-    GOPROXY=direct GOBIN="$GAET_BIN_DIR" go install github.com/ghaniyyrahmans/gaet/cmd/gaet@latest
+    GOPROXY=direct GOBIN="$GAET_BIN_DIR" go install github.com/ghaniyyrahmans/gaet/cmd/gaet"@v${GAET_VERSION}"
     echo "  [ OK ]  Installed gaet binary -> $GAET_BIN_DIR/gaet"
 else
     # Fallback to downloading the GitHub Release archive for this platform
@@ -56,7 +58,7 @@ else
         x86_64) ARCH="amd64" ;;
         aarch64|arm64) ARCH="arm64" ;;
     esac
-    BIN_URL="https://github.com/ghaniyyrahmans/gaet/releases/latest/download/gaet-${OS}-${ARCH}.tar.gz"
+    BIN_URL="https://github.com/ghaniyyrahmans/gaet/releases/download/v${GAET_VERSION}/gaet-${OS}-${ARCH}.tar.gz"
     echo "  [INFO]  Downloading gaet (${OS}/${ARCH})..."
     TMP="$(mktemp -d)"
     if curl -fsSL "$BIN_URL" -o "$TMP/gaet.tar.gz" && tar -xzf "$TMP/gaet.tar.gz" -C "$TMP" gaet; then
@@ -68,7 +70,7 @@ else
         rm -rf "$TMP"
         echo "  [WARN]  Could not download pre-compiled binary. Building locally if Go is available..."
         if command -v go &>/dev/null; then
-            GOPROXY=direct GOBIN="$GAET_BIN_DIR" go install github.com/ghaniyyrahmans/gaet/cmd/gaet@latest
+            GOPROXY=direct GOBIN="$GAET_BIN_DIR" go install github.com/ghaniyyrahmans/gaet/cmd/gaet"@v${GAET_VERSION}"
         else
             echo "  [FAIL]  Installation failed. Please install Go or check GitHub release assets."
             exit 1

@@ -116,3 +116,10 @@ so a green local run is the gate. Rules:
 - **New Features**: Always branch off and merge into **`main`** (Golang).
 - **Go LTS Bug Fixes**: Apply patch fixes to **`lts/v1.1`**, then merge/cherry-pick into **`main`**.
 - **Legacy Python Security Fixes**: Apply fixes directly to **`lts/v1.0`** only (do NOT merge Python code into Go branches).
+
+### Build, Publish & Distribution
+Version source of truth is the git tag. A release should only require editing the
+version pin in `install.sh` and `install.ps1`; the binary version, dashboard badge,
+GitHub Release assets, and npm SDK version are all derived from the tag. See
+`docs/build-publish-distribution.md` for the full pipeline and release checklist.
+Run `bash sandbox/verify-docs.sh` before committing.
