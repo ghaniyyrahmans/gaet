@@ -238,6 +238,11 @@ jobs:
     permissions:
       contents: write
     steps:
+      # Checkout must run before artifact download: checkout cleans the
+      # workspace, which would otherwise remove the downloaded dist/ directory.
+      - name: Checkout installer scripts
+        uses: actions/checkout@v4
+
       - name: Download all artifacts
         uses: actions/download-artifact@v4
         with:
@@ -246,9 +251,6 @@ jobs:
 
       # The one-liners point at releases/latest/download, so publish the
       # installers themselves as assets. They are checksummed with everything else.
-      - name: Checkout installer scripts
-        uses: actions/checkout@v4
-
       - name: Add quick-install scripts to release assets
         run: |
           set -euo pipefail
